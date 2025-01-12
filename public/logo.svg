@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes glowEffect {
+      0% { filter: drop-shadow(0 0 2px rgba(255,255,255,0.8)); }
+      50% { filter: drop-shadow(0 0 8px rgba(255,255,255,0.9)); }
+      100% { filter: drop-shadow(0 0 2px rgba(255,255,255,0.8)); }
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .text-main {
+      animation: glowEffect 3s infinite;
+    }
+    .tech-line {
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: dash 2s ease-in-out forwards;
+    }
+    .domain {
+      font-family: 'Monaco', monospace;
+      font-size: 14px;
+      fill: #E5E5E5;
+    }
+  </style>
+
+  <!-- Tech Lines -->
+  <g class="tech-lines" stroke="#E5E5E5" stroke-width="1.5">
+    <path class="tech-line" d="M 20,35 L 35,35" stroke-linecap="round" />
+    <path class="tech-line" d="M 85,35 L 100,35" stroke-linecap="round" />
+    <path class="tech-line" d="M 20,85 L 35,85" stroke-linecap="round" />
+    <path class="tech-line" d="M 85,85 L 100,85" stroke-linecap="round" />
+  </g>
+
+  <!-- Main Text -->
+  <g class="text-main">
+    <!-- huuthien -->
+    <text x="60" y="55" 
+          text-anchor="middle" 
+          fill="#FFFFFF" 
+          font-family="Arial, sans-serif" 
+          font-size="22" 
+          font-weight="bold"
+          letter-spacing="1">huuthien</text>
+    
+    <!-- .com -->
+    <text x="60" y="75" 
+          text-anchor="middle" 
+          class="domain">.com</text>
+  </g>
+
+  <!-- Decorative Code Elements -->
+  <text x="15" y="30" fill="#E5E5E5" font-family="monospace" font-size="10" opacity="0.6">&lt;</text>
+  <text x="100" y="90" fill="#E5E5E5" font-family="monospace" font-size="10" opacity="0.6">/&gt;</text>
+</svg> 

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import DesktopPage from '@/components/DesktopPage';
-import MobilePage from '@/components/MobilePage';
+import DesktopAbout from '@/components/about/DesktopAbout';
+import MobileAbout from '@/components/about/MobileAbout';
 import Loading from '@/components/Loading';
 
-export default function Home() {
+export default function About() {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,13 +16,9 @@ export default function Home() {
       }
     };
 
-    // Kiểm tra lần đầu
     checkDevice();
-    
-    // Theo dõi thay đổi kích thước màn hình
     window.addEventListener('resize', checkDevice);
 
-    // Thêm loading timeout
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
     }, 500);
@@ -39,7 +35,7 @@ export default function Home() {
 
   return (
     <>
-      {isMobile ? <MobilePage /> : <DesktopPage />}
+      {isMobile ? <MobileAbout /> : <DesktopAbout />}
     </>
   );
-}
+} 

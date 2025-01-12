@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hiệu ứng phát sáng cho viền */
+.glow-border {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Hiệu ứng phát sáng cho đường tròn */
+.glow-circle {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,4 +28,89 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scroll Reveal Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+}
+
+.reveal-on-scroll.is-visible {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Stagger animations for children */
+@keyframes slideUpStagger {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-children > .reveal-child {
+  opacity: 0;
+}
+
+.is-visible > .reveal-child:nth-child(1) {
+  animation: slideUpStagger 0.5s ease-out 0.1s forwards;
+}
+
+.is-visible > .reveal-child:nth-child(2) {
+  animation: slideUpStagger 0.5s ease-out 0.2s forwards;
+}
+
+.is-visible > .reveal-child:nth-child(3) {
+  animation: slideUpStagger 0.5s ease-out 0.3s forwards;
+}
+
+.is-visible > .reveal-child:nth-child(4) {
+  animation: slideUpStagger 0.5s ease-out 0.4s forwards;
+}
+
+/* Float animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
 }
