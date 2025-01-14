@@ -8,7 +8,6 @@ interface TooltipProps {
   name: string;
   description: string;
   link: string;
-  position: 'left' | 'right';
   style: React.CSSProperties;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
@@ -18,8 +17,7 @@ const Tooltip = ({
   isVisible, 
   name, 
   description, 
-  link, 
-  position, 
+  link,
   style,
   onMouseEnter,
   onMouseLeave 

@@ -5,7 +5,6 @@ import { SiReact, SiNextdotjs } from 'react-icons/si';
 import { FiSmartphone, FiMonitor, FiMenu, FiX } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 const navItems = [
   { name: 'Frontend', href: '/services/frontend', icon: <SiReact className="w-4 h-4 text-[#61DAFB]" /> },
@@ -16,7 +15,6 @@ const navItems = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg border-b border-gray-800">

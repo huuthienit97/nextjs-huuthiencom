@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { SiSwift, SiKotlin, SiFlutter, SiReact, SiFirebase, SiAndroid, SiApple } from 'react-icons/si';
 import { FiSmartphone, FiLayout, FiCloud, FiZap } from 'react-icons/fi';

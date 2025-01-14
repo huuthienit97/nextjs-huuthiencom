@@ -52,7 +52,6 @@ interface HomeContentProps {
   services: Service[];
   hoveredService: string | null;
   setHoveredService: (name: string | null) => void;
-  getCurrentPosition: (position: number) => number;
   getTooltipPosition: (service: Service) => 'left' | 'right';
   getTooltipStyle: (position: number) => React.CSSProperties;
   getTooltipStyles: (service: Service) => React.CSSProperties;
@@ -182,7 +181,7 @@ export default function DesktopPage() {
         right: window.innerWidth - iconRect.left + gap,
       };
     }
-  }, []);
+  }, [getTooltipPosition]);
 
   if (isLoading) {
     return (
@@ -193,7 +192,6 @@ export default function DesktopPage() {
             services={services}
             hoveredService={hoveredService}
             setHoveredService={setHoveredService}
-            getCurrentPosition={getCurrentPosition}
             getTooltipPosition={getTooltipPosition}
             getTooltipStyle={getTooltipStyle}
             getTooltipStyles={getTooltipStyles}
@@ -210,7 +208,6 @@ export default function DesktopPage() {
         services={services}
         hoveredService={hoveredService}
         setHoveredService={setHoveredService}
-        getCurrentPosition={getCurrentPosition}
         getTooltipPosition={getTooltipPosition}
         getTooltipStyle={getTooltipStyle}
         getTooltipStyles={getTooltipStyles}
@@ -225,7 +222,6 @@ const HomeContent = ({
   services,
   hoveredService,
   setHoveredService,
-  getCurrentPosition,
   getTooltipPosition,
   getTooltipStyle,
   getTooltipStyles,
@@ -336,7 +332,6 @@ const HomeContent = ({
                     name={service.name}
                     description={service.description}
                     link={service.link}
-                    position={tooltipPosition}
                     style={getTooltipStyles(service)}
                     onMouseEnter={() => setHoveredService(service.name)}
                     onMouseLeave={() => setHoveredService(null)}
